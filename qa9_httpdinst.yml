@@ -1,0 +1,15 @@
+- name: Install a package
+  hosts: web 
+  tasks:
+    - name: Install http Package
+      yum:
+        name: httpd
+        state: latest
+    - copy:
+        content: "This is qa9 html page setup"
+        dest: /var/www/html/index.html
+    - name: Start the httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes 

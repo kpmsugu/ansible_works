@@ -1,8 +1,0 @@
-- name: Copysshkey
-  hosts: all
-  tasks:
-    - name: initiate a copy
-      authorized_key:
-        user: myuser
-        state: present
-        key: "{{ lookup('file','/home/ocpuser/.ssh/id_rsa.pub') }}"

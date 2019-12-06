@@ -1,0 +1,12 @@
+- name: Install any package # pass the myserver & mypackage varible in cli as agruments
+  hosts: "{{ myserver }}"
+  tasks:
+    - name: Install "{{ mypackage }}" package
+      yum:
+        name: "{{ mypackage }}"
+        state: latest
+    - name: Start "{{ myservice }}" service
+      service:
+        name: "{{myservice}}"
+        state: started
+      when: startsrv == "true"

@@ -1,0 +1,12 @@
+ansible-work-node3.myocp.com
+ansible-work-node4.myocp.com
+
+[db]
+ansible-work-node4.myocp.com
+
+[web]
+ansible-work-node3.myocp.com
+
+
+[all:vars]
+pkg=tree

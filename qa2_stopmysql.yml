@@ -1,0 +1,7 @@
+- name: Stop mysql db service
+  hosts: db
+  tasks:
+    - name: Stop mysql db service
+      service:
+        name: mariadb 
+        state: stopped
