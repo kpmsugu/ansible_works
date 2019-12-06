@@ -1,0 +1,4 @@
+ansible.cfg
+ansible_inventory
+ansible_log
+ansibleauthkey.yml
