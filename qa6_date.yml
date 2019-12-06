@@ -1,0 +1,5 @@
+- name: Run date Command
+  hosts: localhost
+  tasks:
+    - name: current date {{ansible_date_time.date}}
+      command: echo 

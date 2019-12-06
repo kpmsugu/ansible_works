@@ -1,0 +1,5 @@
+- name: Copy a file
+  hosts: all
+  tasks:
+    - name: Copy file from ans master to all its clients
+      copy: src=/tmp/copy.txt dest=/tmp/

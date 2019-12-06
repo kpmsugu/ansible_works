@@ -1,0 +1,15 @@
+- name: Use replace module
+  hosts: web
+  tasks:
+    - name: Install httpd server
+      yum: name=httpd state=latest
+      notify: Startsrv
+    - name: Replace a content using lineinfile
+      replace: 
+        path: /etc/httpd/conf/httpd.conf 
+        regexp: "AllowOverride None"
+        replace: "AllowOverride none"
+      notify: Startsrv
+  handlers:
+  - name: Startsrv
+    service: name=httpd state=restarted

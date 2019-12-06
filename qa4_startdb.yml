@@ -1,0 +1,7 @@
+- name: Start mariadb Server
+  hosts: db
+  tasks: 
+    - name: start the db service
+      service:
+        name: mariadb
+        state: started

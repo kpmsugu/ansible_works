@@ -1,0 +1,13 @@
+- name: Usage firewalld
+  hosts: web
+  tasks:
+   - name: Install httpd
+     yum: name=httpd state=latest
+   - name: Create index file
+     copy:
+      content: "This is firewalld start index file"
+      dest: /var/www/html/firewall.txt
+   - name: Start serive
+     service: name=httpd state=restarted
+   - name: Enable firewall
+     firewalld: service=http permanent=yes state=enabled
