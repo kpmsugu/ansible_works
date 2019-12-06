@@ -9,4 +9,4 @@ ansible-work-node3.myocp.com
 
 
 [all:vars]
-pkg=tree
+pkg=nfs-utils,ntp

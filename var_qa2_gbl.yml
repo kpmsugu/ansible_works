@@ -1,0 +1,12 @@
+- name: usage local variable
+  hosts: all
+  tasks:
+    - name: install pkg
+      yum: name={{pkg}} state=latest
+    - name: start the services
+      service: 
+         name: "{{item}}"
+         state: stopped
+      with_items:
+        - nfs
+        - ntpd

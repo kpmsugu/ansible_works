@@ -1,0 +1,15 @@
+- name: Use taggs
+  hosts: all
+  tasks:
+    - name: Install httpd pkg
+      yum: name=httpd state=latest
+      tags: httpd
+    - name: Start httpd service 
+      service: name=httpd state=started enabled=yes
+      tags: httpd
+    - name: Install vsftpd pkg
+      yum: name=vsftpd state=latest
+      tags: vsftpd 
+    - name: Start vsftpd service 
+      service: name=vsftpd state=started enabled=yes
+      tags: vsftpd 

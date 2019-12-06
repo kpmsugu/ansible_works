@@ -1,0 +1,8 @@
+- name: usage local variable
+  hosts: all
+  vars:
+    - pkg: tree,strace
+  tasks:
+    - name: install pkg
+      yum: name={{pkg}} state=latest
+
