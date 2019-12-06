@@ -1,0 +1,13 @@
+- name: use lineinfile
+  hosts: all
+  tasks:
+    - name: create a file & change
+      copy:
+        content: "My first web page"
+        dest: "/tmp/file"
+    - name: use lineinfile
+      lineinfile: 
+        path: /tmp/file
+        regexp: "My first web page"
+        line: "my sample ansible file"
+

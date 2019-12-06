@@ -1,0 +1,6 @@
+- name: change file permission
+  hosts: all
+  tasks:
+    - name: change perm
+      file: path=/tmp/emptyfile state=touch mode=0644
+      

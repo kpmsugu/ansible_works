@@ -1,0 +1,5 @@
+- name: Create dir
+  hosts: all
+  tasks:
+    - name: create dir
+      file: path=/tmp/emptydir state=directory mode=0755

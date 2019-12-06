@@ -1,0 +1,4 @@
+- name: facts
+  hosts: all
+  tasks:
+    - copy: content={{ansible_hostname}} dest=/tmp/{{ansible_hostname}}.txt

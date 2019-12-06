@@ -1,0 +1,7 @@
+- name: create user & group
+  hosts: all
+  tasks:
+    - name: create group
+      group: name=architect state=present
+    - name: Create user
+      user: name=balan groups=architect state=present
